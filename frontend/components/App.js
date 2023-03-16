@@ -24,6 +24,15 @@ export default class App extends React.Component {
 
   onButtonClick = (e) => {
     e.target.value === "toggleButton" && this.setState({hideCompleted: !this.state.hideCompleted}) 
+
+    this.setState({
+      ...this.state,
+      todos: this.state.todos.filter(todo =>
+              todo.complete !== true
+              ),
+      hideCompleted: !this.state.hideCompleted
+    });
+
   }
 
   onTodoClick = (e) => {
