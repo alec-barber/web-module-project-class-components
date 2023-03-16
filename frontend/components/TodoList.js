@@ -6,7 +6,7 @@ export default class TodoList extends React.Component {
     return (
       <div>
         {this.props.todos.map( (value, i) =>  {
-          return <Todo index={i} todos={this.props.todos} onClick={this.props.onClick} todoItem={this.props.todoItem} key={i} value={value.item} />
+          return <Todo todos={this.props.todos} onClick={this.props.onClick} value={value.item} key={i} index={i} />
         } )}
       </div>
     )

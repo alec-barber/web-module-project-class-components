@@ -27,13 +27,12 @@ export default class App extends React.Component {
   }
 
   onTodoClick = (e) => {
-    const nextList = this.state.todos.map( todo => {
+    this.state.todos.map( todo => {
       if (todo.item === e.target.innerText) {
         console.log(todo.complete)
         return todo.complete = !todo.complete
       }
     })
-
     this.setState({...this.state, todos: this.state.todos})
   }
 

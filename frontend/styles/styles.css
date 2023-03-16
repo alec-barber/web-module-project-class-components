@@ -1,14 +1,9 @@
-.test {
-  color: orange;
-}
-
-
 .todoItem {
   color: darkblue;
 }
 
 .todoItemComplete {
-  color: green;
+  color: rgb(26, 92, 0);
   text-decoration:line-through;
 }
 
