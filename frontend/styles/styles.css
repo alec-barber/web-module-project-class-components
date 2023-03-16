@@ -1,5 +1,10 @@
+.test {
+  color: orange;
+}
+
+
 .todoItem {
-  color: red;
+  color: darkblue;
 }
 
 .todoItemComplete {
