@@ -1,3 +1,18 @@
+.todoItem {
+  color: red;
+}
+
+.todoItemComplete {
+  color: green;
+  text-decoration:line-through;
+}
+
+.hidden {
+  display: none;
+}
+
+/* End of my styles */
+
 @font-face {
   font-family: 'Titillium Web';
   src: url('../fonts/TitilliumWeb-SemiBold.ttf');
