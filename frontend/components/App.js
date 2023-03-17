@@ -50,7 +50,6 @@ export default class App extends React.Component {
   onTodoClick = (e) => {
     this.state.todos.map( todo => {
       if (todo.item === e.target.innerText) {
-        console.log(todo.complete)
         return todo.complete = !todo.complete
       }
     })
@@ -60,7 +59,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Todo App</h1>
+        <h1>To-Do App</h1>
         <TodoList onClick={this.onTodoClick} todoItem={this.state.todoItem} todos={this.state.todos} />
         <Form todoItem={this.state.todoItem} onChange={this.onChange} onSubmit={this.onSubmit} />
         <button onClick={this.onButtonClick} value="toggleButton" >{this.state.hideCompleted === false ? 'Hide Completed' : 'Show Completed'}</button>
