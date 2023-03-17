@@ -8,6 +8,7 @@ export default class App extends React.Component {
     this.state = {
       todoItem: { item: '', complete: false },
       todos: [],
+      wholeList: [],
       hideCompleted: false
     }
   }
@@ -18,20 +19,31 @@ export default class App extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    this.setState({...this.state, todos: [...this.state.todos, this.state.todoItem]})
+    this.setState({...this.state, todos: [...this.state.todos, this.state.todoItem], wholeList: [...this.state.wholeList, this.state.todoItem]})
     this.setState({todoItem: {item: '', complete: false}})
   }
 
   onButtonClick = (e) => {
     e.target.value === "toggleButton" && this.setState({hideCompleted: !this.state.hideCompleted}) 
 
-    this.setState({
-      ...this.state,
-      todos: this.state.todos.filter(todo =>
-              todo.complete !== true
-              ),
-      hideCompleted: !this.state.hideCompleted
-    });
+    const origTodos = this.state.wholeList
+    const todosFilter = this.state.todos.filter(todo =>
+      todo.complete !== true
+      )
+
+    if (this.state.hideCompleted === false){
+      this.setState({
+        ...this.state,
+        todos: todosFilter,
+        hideCompleted: !this.state.hideCompleted
+      });
+    }else{
+      this.setState({
+        ...this.state,
+        todos: origTodos,
+        hideCompleted: !this.state.hideCompleted
+      })
+    }
 
   }
 
